@@ -1,6 +1,6 @@
 public class sqrt {
     public static void main(String[] args) {
-        System.out.println(squareRoot(3));
+        System.out.println(findSquareRoot(1));
     }
     public static int squareRoot(int x){
         if(x == 1 || x == 2 || x == 3 )
@@ -25,15 +25,37 @@ public class sqrt {
         return 0;
     }
     /*
-    * problems:
+    * problem:
     * if possible use for loop instead of recursion (space complexity is high in case of recursion)
     * above solution will not work data type integer because of integer overflow on (max*max)
     * */
 
     /*
-    * solutions:
+    * solution:
     * use for/while instead of recursive call
     * use divide instead of multiplication to avoid integer overflow
     * */
 
+    public static int findSquareRoot(int x){
+        if(x<1) {
+            return 0;
+        }else{
+            int low = 1;
+            int high = x;
+            int ans = 0;
+            while(low<high){
+                int mid = (low + high)/2;
+                if(mid == (x/mid)){
+                    return mid;
+                } else if ((high == low + 1) && (low<=(x/low)) && (high>=(x/high))){
+                    return low;
+                }else if (mid < (x/mid)) {
+                    low = mid;
+                } else if(mid > (x/mid)){
+                    high = mid;
+                }
+            }
+        }
+        return 0;
+    }
 }
