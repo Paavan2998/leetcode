@@ -42,7 +42,6 @@ public class sqrt {
         }else{
             int low = 1;
             int high = x;
-            int ans = 0;
             while(low<high){
                 int mid = (low + high)/2;
                 if(mid == (x/mid)){
@@ -56,6 +55,6 @@ public class sqrt {
                 }
             }
         }
-        return 0;
+        return 1;
     }
 }
