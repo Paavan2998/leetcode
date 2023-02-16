@@ -1,3 +1,5 @@
+package easy;
+
 public class sqrt {
     public static void main(String[] args) {
         System.out.println(findSquareRoot(1));
